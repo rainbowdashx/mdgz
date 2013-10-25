@@ -1,0 +1,7 @@
+## Interface: 50400
+## Title: machtDRUCK GZ
+## Version: 1337
+## Author: Morf
+
+parayok.lua
+
