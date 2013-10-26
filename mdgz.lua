@@ -22,6 +22,14 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 		msg="gz  "..name
 	elseif(rnd>59 and rnd <80) then
 		msg="gut gemacht "..name
+	elseif(rnd>99) then
+		msg="Endlich jemand, der seinen Shop versteht!"		
+	elseif(rnd>94) then 
+		msg="Ich dreh durch, Klasse Typ"
+	elseif(rnd>90) then
+		msg="Eher nicht so schwer, " ..name
+	elseif(rnd>85) then 
+		msg="Bunter ist eh Besser, "..name
 	else
 		msg="gz "
 	end
