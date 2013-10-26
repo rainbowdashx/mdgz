@@ -22,6 +22,5 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 	else
 		msg="gz "
 	end
-	print(rnd)
     SendChatMessage(msg..arg[2],"GUILD")
 end
