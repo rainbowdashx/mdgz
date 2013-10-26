@@ -20,6 +20,8 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 		msg ="ein toller erfolg, " .. name
 	elseif(rnd >39 and rnd <60)then
 		msg="gz  "..name
+	elseif(rnd>59 and rnd <80) then
+		msg="gut gemacht "..name
 	else
 		msg="gz "
 	end
