@@ -20,18 +20,18 @@ end
 
 
 local msgs={
-		{msg="das ist tolle Arbeit Freunde" , weight=10},
-		{msg="Endlich jemand, der seinen Shop versteht!", weight = 10},
-		{msg="Ich dreh durch, Klasse Typ", weight=10},
-		{msg="Eher nicht so schwer, {name}" , weight=10},
-		{msg="Gute Arbeit bald hast du Bunter eingeholt! {name}", weight=10},
-		{msg="gut gemacht {name}", weight=10},
-		{msg="gz  {name}", weight=10},
-		{msg="ein toller erfolg, {name}", weight =10},
-		{msg="Atemberaubend, {name}" , weight	=10},
-		{msg="gz ", weight=10},
-		{msg="gz {name} ignorier battle!", weight=20},
-		{msg="Puh.. {name}, Holla die Waldfee!",weight=10},
+		{msg="das ist tolle Arbeit Freunde" , weight=20},
+		{msg="Endlich jemand, der seinen Shop versteht!", weight = 25},
+		{msg="Ich dreh durch, Klasse Typ", weight=20},
+		{msg="Eher nicht so schwer, {name}" , weight=25},
+		{msg="Gute Arbeit bald hast du Bunter eingeholt! {name}", weight=30},
+		{msg="gut gemacht {name}", weight=35},
+		{msg="gz  {name}", weight=30},
+		{msg="ein toller erfolg, {name}", weight =35},
+		{msg="Atemberaubend, {name}" , weight	=30},
+		{msg="gz ", weight=35},
+		{msg="Bunter hat's schon lang {name}", weight=20},
+		{msg="Puh.. {name}, Holla die Waldfee!",weight=20},
 }
 
 totals=weighted_total(msgs)
