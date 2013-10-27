@@ -34,6 +34,7 @@ local msgs={
 		{msg="Puh.. {name}, Holla die Waldfee!",weight=20},
 		{msg="{name} ich will ein Kind von dir!",weight=20},
 		{msg="Hut ab! {name}",weight=20},
+		{msg="Dieser {name} geht ab!",weight=20},
 }
 
 totals=weighted_total(msgs)
