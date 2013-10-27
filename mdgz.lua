@@ -14,14 +14,8 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 	local msg="gz "
 	local name=arg[2]
 	local rnd = math.random(1,100)  
-	if (rnd <30) then
+	if (rnd <10) then
 		msg="das ist tolle Arbeit Freunde"
-	elseif(rnd>29 and rnd <40) then
-		msg ="ein toller erfolg, " .. name
-	elseif(rnd >39 and rnd <60)then
-		msg="gz  "..name
-	elseif(rnd>59 and rnd <80) then
-		msg="gut gemacht "..name
 	elseif(rnd>99) then
 		msg="Endlich jemand, der seinen Shop versteht!"		
 	elseif(rnd>94) then 
@@ -29,7 +23,15 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 	elseif(rnd>90) then
 		msg="Eher nicht so schwer, " ..name
 	elseif(rnd>85) then 
-		msg="Bunter ist eh Besser, "..name
+		msg="Gute Arbeit bald hast du Bunter eingeholt! "..name
+	elseif(rnd>60) then
+		msg="gut gemacht "..name		
+	elseif(rnd>40)then
+		msg="gz  "..name
+	elseif(rnd>30) then
+		msg ="ein toller erfolg, " .. name
+	elseif(rnd>20) then
+		msg ="Atemberaubend " .. name		
 	else
 		msg="gz "
 	end
