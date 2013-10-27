@@ -25,13 +25,14 @@ local msgs={
 		{msg="Ich dreh durch, Klasse Typ", weight=20},
 		{msg="Eher nicht so schwer, {name}" , weight=25},
 		{msg="Gute Arbeit bald hast du Bunter eingeholt! {name}", weight=30},
-		{msg="gut gemacht {name}", weight=35},
+		{msg="Gut gemacht {name}", weight=35},
 		{msg="gz  {name}", weight=30},
-		{msg="ein toller erfolg, {name}", weight =35},
+		{msg="Ein toller Erfolg, {name}", weight =35},
 		{msg="Atemberaubend, {name}" , weight	=30},
 		{msg="gz ", weight=35},
 		{msg="Bunter hat's schon lang {name}", weight=20},
 		{msg="Puh.. {name}, Holla die Waldfee!",weight=20},
+		{msg="{name} ich will ein Kind von dir!",weight=20},
 }
 
 totals=weighted_total(msgs)
