@@ -28,9 +28,10 @@ local msgs={
 		{msg="gut gemacht {name}", weight=10},
 		{msg="gz  {name}", weight=10},
 		{msg="ein toller erfolg, {name}", weight =10},
-		{msg="Atemberaubend {name}" , weight	=10},
+		{msg="Atemberaubend, {name}" , weight	=10},
 		{msg="gz ", weight=10},
-		{msg="gz trotz battle battle", weight=20},
+		{msg="gz {name} ignorier battle!", weight=20},
+		{msg="Puh.. {name}, Holla die Waldfee!",weight=10},
 }
 
 totals=weighted_total(msgs)
