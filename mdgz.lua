@@ -35,6 +35,7 @@ local msgs={
 		{msg="{name} ich will ein Kind von dir!",weight=20},
 		{msg="Hut ab! {name}",weight=20},
 		{msg="Dieser {name} geht ab!",weight=20},
+		{msg="Wie Charlie Sheen in Hot Shots!",weight=20},
 }
 
 totals=weighted_total(msgs)
