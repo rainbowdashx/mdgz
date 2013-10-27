@@ -1,4 +1,5 @@
 local totals=50
+local lastMsg=0
 function weighted_total(choices)
 	local total = 0
 	for i, v in ipairs(choices) do
@@ -51,12 +52,18 @@ MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT");
 
 
 function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
-	local arg={...}
-	local msg="gz"
-	local name=arg[2]
-	local msg=weighted_random_choice(msgs)
-	msg=string.gsub(msg, "{name}", name)
-    SendChatMessage(msg,"GUILD")
+	if (lastMsg < time())then
+		local arg={...}
+		local msg="gz"
+		local name=arg[2]
+		local msg=weighted_random_choice(msgs)
+
+		if (name ~=UnitName("player"))then
+			msg=string.gsub(msg, "{name}", name)
+			SendChatMessage(msg,"GUILD")
+		end
+		lastMsg=time()+2 --2 seconds 
+	end
 end
 
 
