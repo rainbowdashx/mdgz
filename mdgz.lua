@@ -53,6 +53,11 @@ local msgs={
 		{msg="Torgo approved, {name}!",weight=20},
 		{msg="The Freak gefällt das, {name}!",weight=20},
 		{msg="Ich bin stolz auf dich, {name}!",weight=20},
+		{msg="Fantastisch, {name}!",weight=20},
+		{msg="Klasse!",weight=20},
+		{msg="Spitzenmäßig!",weight=20},
+		{msg="Spitze!",weight=20},
+		{msg="Gönn ich dir, {name}",weight=20},
 }
 
 local greets={
