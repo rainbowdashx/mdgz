@@ -1,5 +1,17 @@
 local totals=50
 local lastMsg=0
+local lastAutoGreet = 0
+
+--==================OPTIONS
+
+--true  für AN
+--false für AUS
+
+local autoGZ = true
+local leuteBegruessen = true		
+
+--=========================
+
 function weighted_total(choices)
 	local total = 0
 	for i, v in ipairs(choices) do
@@ -41,6 +53,12 @@ local msgs={
 		
 }
 
+local greets={
+	"Hallo","Hui","Huhu","halo","hallo","hai","wuhu","boing","hi"
+}
+
+local greetPatterns = {"abend","hallo","huhu","tag","servus","was geht","hi","halo","guten morgen","hai"}
+
 totals=weighted_total(msgs)
 
 local MDGZ = CreateFrame("frame")
@@ -48,8 +66,8 @@ MDGZ:SetScript("OnEvent", function(self, event, ...)
     self[event](self, ...)
 end)
 
-MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT");
-
+if (autoGZ) then MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT"); end
+if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
 
 
 
@@ -68,6 +86,20 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 	end
 end
 
-
+function MDGZ:CHAT_MSG_GUILD(...)
+	local msg=...
+	local senderName=select(2,...)
+	msg=string.lower(msg)
+	if (senderName == UnitName("player")) then return end
+	if (lastAutoGreet < time()) then
+		for i = 1, #greetPatterns do
+			if (string.find(msg,greetPatterns[i]))then
+				SendChatMessage(greets[math.random(#greets)],"GUILD")
+				lastAutoGreet=time()+5
+				return
+			end	
+		end
+	end
+end
 
 
