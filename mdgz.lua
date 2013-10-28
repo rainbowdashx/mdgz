@@ -50,7 +50,9 @@ local msgs={
 		{msg="Dieser {name} geht ab!",weight=20},
 		{msg="Wie Charlie Sheen in Hot Shots!",weight=20},
 		{msg="Sheesh, {name}!",weight=20},
-		
+		{msg="Torgo approved, {name}!",weight=20},
+		{msg="The Freak gefällt das, {name}!",weight=20},
+		{msg="Ich bin stolz auf dich, {name}!",weight=20},
 }
 
 local greets={
@@ -97,7 +99,7 @@ function MDGZ:CHAT_MSG_GUILD(...)
 		for i = 1, #greetPatterns do
 			if (string.find(msg,greetPatterns[i]))then
 				SendChatMessage(greets[math.random(#greets)],"GUILD")
-				lastAutoGreet=time()+5
+				lastAutoGreet=time()+10
 				return
 			end	
 		end
