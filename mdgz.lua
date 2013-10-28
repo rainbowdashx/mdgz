@@ -59,7 +59,7 @@ local greets={
 	"Hallo","Hui","Huhu","halo","hallo","hai","wuhu","boing","hi"
 }
 
-local greetPatterns = {"abend","hallo","huhu","guten tag","servus","was geht","hi","halo","guten morgen","hai"}
+local greetPatterns = {"abend","hallo","huhu","guten tag","servus","was geht","halo","guten morgen"}
 
 totals=weighted_total(msgs)
 
