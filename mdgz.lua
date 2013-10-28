@@ -57,7 +57,7 @@ local greets={
 	"Hallo","Hui","Huhu","halo","hallo","hai","wuhu","boing","hi"
 }
 
-local greetPatterns = {"abend","hallo","huhu","tag","servus","was geht","hi","halo","guten morgen","hai"}
+local greetPatterns = {"abend","hallo","huhu","guten tag","servus","was geht","hi","halo","guten morgen","hai"}
 
 totals=weighted_total(msgs)
 
@@ -68,6 +68,8 @@ end)
 
 if (autoGZ) then MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT"); end
 if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
+
+
 
 
 
@@ -101,5 +103,4 @@ function MDGZ:CHAT_MSG_GUILD(...)
 		end
 	end
 end
-
 
