@@ -11,7 +11,6 @@ local autoGZ = true
 local leuteBegruessen = true	
 
 --=========================
-
 function weighted_total(choices)
 	local total = 0
 	for i, v in ipairs(choices) do
@@ -30,7 +29,6 @@ function weighted_random_choice(choices)
 	end
 	return last_choice
 end
-
 
 local msgs={
 		{msg="das ist tolle Arbeit Freunde" , weight=10},
@@ -67,6 +65,10 @@ local msgs={
 		{msg="Ich Fellipe aus {name}, richtig Großkreutz style",weight=5},
 		{msg="Beste YA, {name}",weight=30},
 		{msg="Beste YA",weight=30},
+		{msg="Super, {name}",weight=30},
+		{msg="Super",weight=30},
+		{msg="Torgastisch!!!",weight=30},
+		{msg="Teuflisch! {name}",weight=30},
 }
 
 local greets={
@@ -100,7 +102,7 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 		local msg="gz"
 		local name=arg[2]
 		local msg=weighted_random_choice(msgs)
-
+		name=string.gsub(name,"-Echsenkessel","")
 		if (name ~=UnitName("player"))then
 			msg=string.gsub(msg, "{name}", name)
 			SendChatMessage(msg,"GUILD")
