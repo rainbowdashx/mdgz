@@ -144,10 +144,6 @@ function MDGZ:CHAT_MSG_GUILD(...)
 end
 
 function MDGZ:GUILD_ROSTER_UPDATE(...)
-	if (lastAutoGreet < time()) then
-		local msg="WELCOME"
-		SendChatMessage(msg,"GUILD")
-		lastAutoGreet=time()+10
-	end
+	
 end
 
