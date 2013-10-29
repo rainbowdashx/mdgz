@@ -8,7 +8,9 @@ local lastAutoGreet = 0
 --false für AUS
 
 local autoGZ = true
-local leuteBegruessen = true		
+local leuteBegruessen = true	
+local leuteWillkommen = true
+
 
 --=========================
 
@@ -44,6 +46,7 @@ local msgs={
 		{msg="Atemberaubend, {name}" , weight	=5},
 		{msg="gz ", weight=40},
 		{msg="gratz ", weight=40},
+		{msg="GZ {name}", weight=40},
 		{msg="Bunter hat's schon lang {name}", weight=5},
 		{msg="Puh.. {name}, Holla die Waldfee!",weight=1},
 		{msg="{name} ich will ein Kind von dir!",weight=2},
@@ -64,14 +67,20 @@ local msgs={
 		{msg="Geilomatic",weight=8},
 		{msg="Sickadelic",weight=15},
 		{msg="Ich Fellipe aus {name}, richtig Großkreutz style",weight=5},
+		{msg="Beste YA, {name}",weight=30},
+		{msg="Beste YA",weight=30},
 }
 
 local greets={
-	"Hallo","Hui","Huhu","halo","hallo","hai","wuhu","boing","hi"
+	"Hallo","Hui","Huhu","halo","hallo","hai","wuhu","boing","hi","halöööö","wuihu"
 }
 
 local  ggs = {
-	"gg", "gg wp","ggwp","wp",
+	"gg", "gg wp","ggwp","wp","stronk"
+}
+
+local nps = {
+	"np","jo np","gerne doch","kein ding"
 }
 
 local greetPatterns = {"abend","hallo","huhu","guten tag","servus","was geht","halo","guten morgen","moin"}
@@ -85,6 +94,7 @@ end)
 
 if (autoGZ) then MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT"); end
 if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
+if (leuteWillkommen) then MDGZ:RegisterEvent("GUILD_ROSTER_UPDATE"); end 
 
 
 
@@ -122,6 +132,22 @@ function MDGZ:CHAT_MSG_GUILD(...)
 			SendChatMessage(ggs[math.random(#ggs)],"GUILD")
 			lastAutoGreet=time()+2
 		end
+		if (msg=="re") then
+			SendChatMessage("wb","GUILD")
+			lastAutoGreet=time()+2
+		end
+		if (msg=="thx") then
+			SendChatMessage(nps[math.random(#nps)],"GUILD")
+			lastAutoGreet=time()+2
+		end
+	end
+end
+
+function MDGZ:GUILD_ROSTER_UPDATE(...)
+	if (lastAutoGreet < time()) then
+		local msg="WELCOME"
+		SendChatMessage(msg,"GUILD")
+		lastAutoGreet=time()+10
 	end
 end
 
