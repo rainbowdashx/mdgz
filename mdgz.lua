@@ -70,6 +70,10 @@ local greets={
 	"Hallo","Hui","Huhu","halo","hallo","hai","wuhu","boing","hi"
 }
 
+local  ggs = {
+	"gg", "gg wp","ggwp","wp",
+}
+
 local greetPatterns = {"abend","hallo","huhu","guten tag","servus","was geht","halo","guten morgen","moin"}
 
 totals=weighted_total(msgs)
@@ -113,6 +117,10 @@ function MDGZ:CHAT_MSG_GUILD(...)
 				lastAutoGreet=time()+10
 				return
 			end	
+		end
+		if (msg=="gg") then
+			SendChatMessage(ggs[math.random(#ggs)],"GUILD")
+			lastAutoGreet=time()+2
 		end
 	end
 end
