@@ -67,8 +67,8 @@ local msgs={
 		{msg="Beste YA",weight=30},
 		{msg="Super, {name}",weight=30},
 		{msg="Super",weight=30},
-		{msg="Torgastisch!!!",weight=30},
-		{msg="Teuflisch! {name}",weight=30},
+		{msg="Torgastisch!!!",weight=10},
+		{msg="Teuflisch! {name}",weight=10},
 }
 
 local greets={
