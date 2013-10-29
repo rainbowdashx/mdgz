@@ -9,7 +9,7 @@ local lastAutoGreet = 0
 
 local autoGZ = true
 local leuteBegruessen = true	
-local leuteWillkommen = true
+
 
 
 --=========================
@@ -141,9 +141,5 @@ function MDGZ:CHAT_MSG_GUILD(...)
 			lastAutoGreet=time()+2
 		end
 	end
-end
-
-function MDGZ:GUILD_ROSTER_UPDATE(...)
-	
 end
 
