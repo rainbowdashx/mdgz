@@ -10,8 +10,6 @@ local lastAutoGreet = 0
 local autoGZ = true
 local leuteBegruessen = true	
 
-
-
 --=========================
 
 function weighted_total(choices)
@@ -94,10 +92,6 @@ end)
 
 if (autoGZ) then MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT"); end
 if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
-if (leuteWillkommen) then MDGZ:RegisterEvent("GUILD_ROSTER_UPDATE"); end 
-
-
-
 
 
 function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
