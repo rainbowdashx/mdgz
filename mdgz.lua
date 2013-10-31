@@ -145,10 +145,6 @@ function MDGZ:CHAT_MSG_GUILD(...)
 				lastAutoGreet=time()+3
 			end
 		end
-		if (string.find(msg,"ziehen")) then
-			SendChatMessage("ja comatose macht das gerne","GUILD")
-			lastAutoGreet=time()+10
-		end
 	end
 end
 
