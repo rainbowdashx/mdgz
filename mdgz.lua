@@ -69,6 +69,11 @@ local msgs={
 		{msg="Super",weight=30},
 		{msg="Torgastisch!!!",weight=10},
 		{msg="Teuflisch! {name}",weight=10},
+		{msg="{name}, kannst du mir später dabei helfen, das achievement auch zu machen, wär cool!",weight=5},
+		{msg="Weiss jemand warum mein Bigwigs nicht funktioniert?",weight=2},
+		{msg="Wie komm ich nochmal Schattenhochland?",weight=2},
+		{msg="Kann später jmd meinen Twink durch Kloster ziehen?",weight=2},
+
 }
 
 local greets={
@@ -84,6 +89,7 @@ local nps = {
 }
 
 local greetPatterns = {"abend","hallo","huhu","guten tag","servus","was geht","halo","guten morgen","moin"}
+local thanksPatterns={"thx","danke","thanks"}
 
 totals=weighted_total(msgs)
 
@@ -91,6 +97,7 @@ local MDGZ = CreateFrame("frame")
 MDGZ:SetScript("OnEvent", function(self, event, ...)
     self[event](self, ...)
 end)
+
 
 if (autoGZ) then MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT"); end
 if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
@@ -132,9 +139,15 @@ function MDGZ:CHAT_MSG_GUILD(...)
 			SendChatMessage("wb","GUILD")
 			lastAutoGreet=time()+2
 		end
-		if (msg=="thx") then
-			SendChatMessage(nps[math.random(#nps)],"GUILD")
-			lastAutoGreet=time()+2
+		for i = 1, #thanksPatterns do
+			if (string.find(msg,thanksPatterns[i]))then
+				SendChatMessage(nps[math.random(#nps)],"GUILD")
+				lastAutoGreet=time()+3
+			end
+		end
+		if (string.find(msg,"ziehen")) then
+			SendChatMessage("ja comatose macht das gerne","GUILD")
+			lastAutoGreet=time()+10
 		end
 	end
 end
