@@ -38,8 +38,8 @@ local msgs={
 		{msg="Gute Arbeit bald hast du Bunter eingeholt! {name}", weight=2},
 		{msg="Gut gemacht {name}", weight=25},
 		{msg="gz  {name}", weight=40},
-		{msg="Ein toller Erfolg, {name}", weight =5},
-		{msg="Atemberaubend, {name}" , weight	=5},
+		{msg="Ein toller Erfolg, {name}", weight =15},
+		{msg="Atemberaubend, {name}" , weight	=10},
 		{msg="gz ", weight=40},
 		{msg="gratz ", weight=40},
 		{msg="GZ {name}", weight=40},
@@ -52,7 +52,7 @@ local msgs={
 		{msg="Sheesh, {name}!",weight=30},
 		{msg="gratz {name}", weight=40},
 		{msg="Torgo approved, {name}!",weight=5},
-		{msg="The Freak gefällt das, {name}!",weight=10},
+		{msg="The Freak gefällt das, {name}!",weight=5},
 		{msg="Ich bin stolz auf dich, {name}!",weight=2},
 		{msg="Fantastisch, {name}!",weight=10},
 		{msg="Klasse!",weight=20},
@@ -62,7 +62,7 @@ local msgs={
 		{msg="Cool {name}, hole ich mir auch!",weight=2},
 		{msg="Geilomatic",weight=8},
 		{msg="Sickadelic",weight=15},
-		{msg="Ich Fellipe aus {name}, richtig Großkreutz style",weight=5},
+		{msg="Ich Fellipe aus {name}, richtig Großkreutz style",weight=2},
 		{msg="Beste YA, {name}",weight=30},
 		{msg="Beste YA",weight=30},
 		{msg="Super, {name}",weight=30},
@@ -88,7 +88,7 @@ local nps = {
 	"np","jo np","gerne doch","kein ding"
 }
 
-local greetPatterns = {"abend","hallo","huhu","guten tag","servus","was geht","halo","guten morgen","moin"}
+local greetPatterns = {"abend","%s*hallo%s*","%s*huhu%s*","guten tag","%s*servus%s*","%s*sers%s*","was geht","%s*halo%s*","guten morgen","moin"}
 local thanksPatterns={"thx","danke","thanks"}
 
 totals=weighted_total(msgs)
@@ -133,16 +133,16 @@ function MDGZ:CHAT_MSG_GUILD(...)
 		end
 		if (msg=="gg") then
 			SendChatMessage(ggs[math.random(#ggs)],"GUILD")
-			lastAutoGreet=time()+2
+			lastAutoGreet=time()+5
 		end
 		if (msg=="re") then
 			SendChatMessage("wb","GUILD")
-			lastAutoGreet=time()+2
+			lastAutoGreet=time()+5
 		end
 		for i = 1, #thanksPatterns do
 			if (string.find(msg,thanksPatterns[i]))then
 				SendChatMessage(nps[math.random(#nps)],"GUILD")
-				lastAutoGreet=time()+3
+				lastAutoGreet=time()+5
 			end
 		end
 	end
