@@ -69,10 +69,10 @@ local msgs={
 		{msg="Super",weight=30},
 		{msg="Torgastisch!!!",weight=10},
 		{msg="Teuflisch! {name}",weight=10},
-		{msg="{name}, kannst du mir später dabei helfen, das achievement auch zu machen, wär cool!",weight=5},
-		{msg="Weiss jemand warum mein Bigwigs nicht funktioniert?",weight=2},
-		{msg="Wie komm ich nochmal Schattenhochland?",weight=2},
-		{msg="Kann später jmd meinen Twink durch Kloster ziehen?",weight=2},
+		{msg="{name}, kannst du mir später dabei helfen, das achievement auch zu machen, wär cool!",weight=2},
+		{msg="Weiss jemand warum mein Bigwigs nicht funktioniert?",weight=1},
+		{msg="Wie komm ich nochmal Schattenhochland?",weight=1},
+		{msg="Kann später jmd meinen Twink durch Kloster ziehen?",weight=1},
 
 }
 
@@ -88,7 +88,7 @@ local nps = {
 	"np","jo np","gerne doch","kein ding"
 }
 
-local greetPatterns = {"abend","%s*hallo%s*","%s*huhu%s*","guten tag","%s*servus%s*","%s*sers%s*","was geht","%s*halo%s*","guten morgen","moin"}
+local greetPatterns = {"abend%s*","%s*hallo%s*","%s*huhu%s*","guten tag","%s*servus%s*","%s*sers%s*","was geht","%s*halo%s*","guten morgen","moin"}
 local thanksPatterns={"thx","danke","thanks"}
 
 totals=weighted_total(msgs)
