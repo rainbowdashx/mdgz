@@ -88,7 +88,7 @@ local nps = {
 	"np","jo np","gerne doch","kein ding"
 }
 
-local greetPatterns = {"abend%s*","%s*hallo%s*","%s*huhu%s*","guten tag","%s*servus%s*","%s*sers%s*","was geht","%s*halo%s*","guten morgen","moin"}
+local greetPatterns = {"abend","hallo","huhu","guten tag","servus","sers","was geht","halo","guten morgen","moin"}
 local thanksPatterns={"thx","danke","thanks"}
 
 totals=weighted_total(msgs)
@@ -125,7 +125,7 @@ function MDGZ:CHAT_MSG_GUILD(...)
 	if (senderName == UnitName("player")) then return end
 	if (lastAutoGreet < time()) then
 		for i = 1, #greetPatterns do
-			if (string.find(msg,greetPatterns[i]))then
+			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..greetPatterns[i].."[^%a]"))then
 				SendChatMessage(greets[math.random(#greets)],"GUILD")
 				lastAutoGreet=time()+10
 				return
@@ -140,7 +140,7 @@ function MDGZ:CHAT_MSG_GUILD(...)
 			lastAutoGreet=time()+5
 		end
 		for i = 1, #thanksPatterns do
-			if (string.find(msg,thanksPatterns[i]))then
+			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..thanksPatterns[i].."[^%a]"))then
 				SendChatMessage(nps[math.random(#nps)],"GUILD")
 				lastAutoGreet=time()+5
 			end
