@@ -85,11 +85,11 @@ local  ggs = {
 }
 
 local nps = {
-	"np","jo np","gerne doch","kein ding"
+	"np","jo np","gerne doch","kein ding","np brudah","jo kein ding","immer doch"
 }
 
-local greetPatterns = {"abend","hallo","huhu","guten tag","servus","sers","was geht","halo","guten morgen","moin"}
-local thanksPatterns={"thx","danke","thanks"}
+local greetPatterns = {"abend","hallo","huhu","servus","sers","was geht","halo","guten morgen","moin","hai","hi","tag","holla"}
+local thanksPatterns={"thx","danke","thanks","dankeschön"}
 
 totals=weighted_total(msgs)
 
