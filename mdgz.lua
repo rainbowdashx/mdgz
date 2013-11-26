@@ -39,7 +39,7 @@ local msgs={
 		{msg="Gut gemacht {name}", weight=25},
 		{msg="gz  {name}", weight=40},
 		{msg="Ein toller Erfolg, {name}", weight =15},
-		{msg="Atemberaubend, {name}" , weight	=10},
+		{msg="Atemberaubend, {name}" , weight=10},
 		{msg="gz ", weight=40},
 		{msg="gratz ", weight=40},
 		{msg="GZ {name}", weight=40},
@@ -70,6 +70,11 @@ local msgs={
 		{msg="Torgastisch!!!",weight=10},
 		{msg="Teuflisch! {name}",weight=10},
 		{msg="Unglaublich!",weight=10},
+		{msg="BOOM !",weight=10},
+		{msg="Yeah achiev bitch",weight=10},
+		{msg="Bumm Bumm {name}",weight=10},
+		{msg="#achievement",weight=10},
+		{msg="#geilertyp",weight=10},
 }
 
 local greets={
