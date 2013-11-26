@@ -75,6 +75,8 @@ local msgs={
 		{msg="Bumm Bumm {name}",weight=10},
 		{msg="#achievement",weight=10},
 		{msg="#geilertyp",weight=10},
+		{msg="richtig shorup {name}!",weight=20},
+
 }
 
 local greets={
@@ -87,6 +89,9 @@ local  ggs = {
 
 local nps = {
 	"np","jo np","gerne doch","kein ding","np brudah","jo kein ding","immer doch"
+}
+local yolos = {
+	"swag","swagalicious","#swag","#swaghettiyolonese","#yoloswagbabbo!","chabbo swag","yolo","BOOM yolo swag","no homo","shorup digga!"
 }
 
 local greetPatterns = {"abend","hallo","huhu","servus","sers","was geht","halo","guten morgen","moin","hai","hi","tag","holla"}
@@ -138,6 +143,14 @@ function MDGZ:CHAT_MSG_GUILD(...)
 		end
 		if (msg=="re") then
 			SendChatMessage("wb","GUILD")
+			lastAutoGreet=time()+5
+		end
+		if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]yolo[^%a]")) then
+			SendChatMessage(yolos[math.random(#yolos)],"GUILD")
+			lastAutoGreet=time()+5
+		end
+		if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]swag[^%a]")) then
+			SendChatMessage(yolos[math.random(#yolos)],"GUILD")
 			lastAutoGreet=time()+5
 		end
 		for i = 1, #thanksPatterns do
