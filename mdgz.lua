@@ -75,7 +75,10 @@ local msgs={
 		{msg="Bumm Bumm {name}",weight=10},
 		{msg="#achievement",weight=10},
 		{msg="#geilertyp",weight=10},
-		{msg="richtig shorup {name}!",weight=20},
+		{msg="richtig shorup {name}!",weight=15},
+		{msg="was willscht da macha",weight=10},
+		{msg="uff hartes achievement",weight=10},
+		{msg="Blöderalbert approved",weight=5},
 
 }
 
