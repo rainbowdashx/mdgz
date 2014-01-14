@@ -86,6 +86,10 @@ local greets={
 	"Hallo","Hui","Huhu","halo","hallo","hai","wuhu","boing","hi","halöööö","wuihu"
 }
 
+local byes={
+	"bye","tschüss","tschau","bis morgen","bis dann","bb","bubu","hau rein"
+}
+
 local  ggs = {
 	"gg", "gg wp","ggwp","wp","stronk"
 }
@@ -99,6 +103,9 @@ local yolos = {
 
 local greetPatterns = {"abend","hallo","huhu","servus","sers","was geht","halo","guten morgen","moin","hai","hi","tag","holla"}
 local thanksPatterns={"thx","danke","thanks","dankeschön"}
+local byePatterns={
+	"bye","tschüss","tschau","bis morgen","bis dann","bb"
+}
 
 totals=weighted_total(msgs)
 
@@ -156,10 +163,18 @@ function MDGZ:CHAT_MSG_GUILD(...)
 			SendChatMessage(yolos[math.random(#yolos)],"GUILD")
 			lastAutoGreet=time()+5
 		end
+		for i = 1, #byePatterns do
+			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..byePatterns[i].."[^%a]"))then
+				SendChatMessage(byes[math.random(#byes)],"GUILD")
+				lastAutoGreet=time()+10
+				return
+			end
+		end
 		for i = 1, #thanksPatterns do
 			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..thanksPatterns[i].."[^%a]"))then
 				SendChatMessage(nps[math.random(#nps)],"GUILD")
 				lastAutoGreet=time()+5
+				return
 			end
 		end
 	end
