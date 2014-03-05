@@ -119,6 +119,7 @@ if (autoGZ) then MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT"); end
 if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
 
 
+
 function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 	if (lastMsg < time())then
 		local arg={...}
