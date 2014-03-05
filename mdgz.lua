@@ -126,6 +126,8 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
 		local name=arg[2]
 		local msg=weighted_random_choice(msgs)
 		name=string.gsub(name,"-Echsenkessel","")
+		name=string.gsub(name,"-Taerar","")
+		name=string.gsub(name,"-Mal'Ganis","")
 		if (name ~=UnitName("player"))then
 			msg=string.gsub(msg, "{name}", name)
 			SendChatMessage(msg,"GUILD")
