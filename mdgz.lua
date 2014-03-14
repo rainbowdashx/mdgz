@@ -140,8 +140,17 @@ end
 function MDGZ:CHAT_MSG_GUILD(...)
 	local msg=...
 	local senderName=select(2,...)
+
+	senderName=string.gsub(senderName,"-Echsenkessel","")
+	senderName=string.gsub(senderName,"-Taerar","")
+	senderName=string.gsub(senderName,"-Mal'Ganis","")
 	msg=string.lower(msg)
-	if (senderName == UnitName("player")) then return end
+	
+	if (senderName == UnitName("player")) then
+		lastAutoGreet=time()+5
+		return 
+	end
+
 	if (lastAutoGreet < time()) then
 		for i = 1, #greetPatterns do
 			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..greetPatterns[i].."[^%a]"))then
@@ -153,18 +162,22 @@ function MDGZ:CHAT_MSG_GUILD(...)
 		if (msg=="gg") then
 			SendChatMessage(ggs[math.random(#ggs)],"GUILD")
 			lastAutoGreet=time()+5
+			return
 		end
 		if (msg=="re") then
 			SendChatMessage("wb","GUILD")
 			lastAutoGreet=time()+5
+			return
 		end
 		if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]yolo[^%a]")) then
 			SendChatMessage(yolos[math.random(#yolos)],"GUILD")
 			lastAutoGreet=time()+5
+			return
 		end
 		if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]swag[^%a]")) then
 			SendChatMessage(yolos[math.random(#yolos)],"GUILD")
 			lastAutoGreet=time()+5
+			return			
 		end
 		for i = 1, #byePatterns do
 			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..byePatterns[i].."[^%a]"))then
