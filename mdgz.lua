@@ -79,6 +79,7 @@ local msgs={
 		{msg="was willscht da macha",weight=10},
 		{msg="uff hartes achievement",weight=10},
 		{msg="Blöderalbert approved",weight=5},
+		{msg="Für Uli!",weight=7},
 
 }
 
