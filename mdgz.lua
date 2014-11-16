@@ -122,7 +122,7 @@ if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
 
 
 function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
-	if (lastMsg < time())then
+	if (lastMsg < time() and math.random(100) > 40)then
 		local arg={...}
 		local msg="gz"
 		local name=arg[2]
