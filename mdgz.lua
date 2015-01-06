@@ -80,6 +80,10 @@ local msgs={
 		{msg="uff hartes achievement",weight=10},
 		{msg="Blöderalbert approved",weight=5},
 		{msg="Für Uli!",weight=7},
+		{msg="Endlich einer der Leischtung zeigt",weight=10},
+		{msg="Ich weiss nicht wehr du bist AMK",weight=5},
+		{msg="{name}, rasiert euch mit Shampoo",weight=5},
+		{msg="Scheiß Pimmelberger.",weight=2},
 
 }
 
@@ -118,6 +122,8 @@ end)
 
 if (autoGZ) then MDGZ:RegisterEvent("CHAT_MSG_GUILD_ACHIEVEMENT"); end
 if (leuteBegruessen) then MDGZ:RegisterEvent("CHAT_MSG_GUILD"); end
+
+
 
 
 
