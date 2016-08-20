@@ -106,11 +106,14 @@ local yolos = {
 	"swag","swagalicious","#swag","#swaghettiyolonese","#yoloswagbabbo!","chabbo swag","yolo","BOOM yolo swag","no homo","shorup digga!"
 }
 
+local normals={"Normal"}
+
 local greetPatterns = {"abend","hallo","huhu","servus","sers","was geht","halo","guten morgen","moin","hai","hi","tag","holla"}
 local thanksPatterns={"thx","danke","thanks","dankeschön"}
 local byePatterns={
 	"bye","tschüss","tschau","bis morgen","bis dann","bb"
 }
+local normalPatterns ={"wie gehts","was geht","geiles addon","macro","wie geht es"}
 
 totals=weighted_total(msgs)
 
@@ -202,6 +205,13 @@ function MDGZ:CHAT_MSG_GUILD(...)
 		for i = 1, #thanksPatterns do
 			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..thanksPatterns[i].."[^%a]"))then
 				SendChatMessage(nps[math.random(#nps)],"GUILD")
+				lastAutoGreet=time()+5
+				return
+			end
+		end
+		for i = 1, #normalPatterns do
+			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..normalPatterns[i].."[^%a]"))then
+				SendChatMessage(normals[math.random(#normals)],"GUILD")
 				lastAutoGreet=time()+5
 				return
 			end
