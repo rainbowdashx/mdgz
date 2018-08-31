@@ -36,6 +36,8 @@ local msgs={
 		{msg="Ich dreh durch, Klasse Typ", weight=5},
 		{msg="Eher nicht so schwer, {name}" , weight=2},
 		{msg="Gute Arbeit bald hast du Bunter eingeholt! {name}", weight=2},
+		{msg="Ne lass {name}", weight=15},
+		{msg="Du {name}, weiß ned", weight=15},
 		{msg="Gut gemacht {name}", weight=25},
 		{msg="gz  {name}", weight=40},
 		{msg="Ein toller Erfolg, {name}", weight =15},
