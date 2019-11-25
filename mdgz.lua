@@ -108,6 +108,10 @@ local yolos = {
 	"swag","swagalicious","#swag","#swaghettiyolonese","#yoloswagbabbo!","chabbo swag","yolo","BOOM yolo swag","no homo","shorup digga!"
 }
 
+local plexAnswers={
+	"mvp","INGNITE SPREADED NIII !!!!"
+}
+
 local normals={"Normal"}
 
 local greetPatterns = {"abend","hallo","huhu","servus","sers","was geht","halo","guten morgen","moin","hai","hi","tag","holla"}
@@ -116,6 +120,7 @@ local byePatterns={
 	"bye","tschüss","tschau","bis morgen","bis dann","bb"
 }
 local normalPatterns ={"wie gehts","was geht","geiles addon","macro","wie geht es"}
+local plexPatterns = {"plex", "flex", "fleks"}
 
 totals=weighted_total(msgs)
 
@@ -197,6 +202,13 @@ function MDGZ:CHAT_MSG_GUILD(...)
 			lastAutoGreet=time()+5
 			return			
 		end
+		for i = 1, #plexPatterns do
+			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..plexPatterns[i].."[^%a]"))then
+				SendChatMessage(plexAnswers[math.random(#plexAnswers)],"GUILD")
+				lastAutoGreet=time()+5
+				return
+			end
+		end
 		for i = 1, #byePatterns do
 			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..byePatterns[i].."[^%a]"))then
 				SendChatMessage(byes[math.random(#byes)],"GUILD")
@@ -218,6 +230,7 @@ function MDGZ:CHAT_MSG_GUILD(...)
 				return
 			end
 		end
+	
 	end
 end
 
