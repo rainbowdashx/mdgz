@@ -1,4 +1,4 @@
-## Interface: 80205
+## Interface: 80300
 ## Title: machtDRUCK GZ
 ## Version: 1337
 ## Author: Morf
