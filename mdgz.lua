@@ -109,7 +109,7 @@ local yolos = {
 }
 
 local plexAnswers={
-	"mvp","INGNITE SPREADED NIII !!!!","Gürtel 1!!"
+	"mvp","INGNITE SPREADED NIII !!!!","Gürtel 1!!","70 stunde","MAN ey!"
 }
 
 local normals={"Normal"}
