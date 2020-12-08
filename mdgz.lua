@@ -30,6 +30,10 @@ function weighted_random_choice(choices)
 	return last_choice
 end
 
+function trim(s)
+  return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
+
 local msgs={
 		{msg="das ist tolle Arbeit Freunde" , weight=10},
 		{msg="Endlich jemand, der seinen Shop versteht!", weight = 2},
@@ -113,6 +117,7 @@ local plexAnswers={
 }
 
 local normals={"Normal"}
+local ask={"didn't ask"}
 
 local greetPatterns = {"abend","hallo","huhu","servus","sers","was geht","halo","guten morgen","moin","hai","hi","tag","holla"}
 local thanksPatterns={"thx","danke","thanks","dankeschön"}
@@ -175,6 +180,10 @@ function MDGZ:CHAT_MSG_GUILD(...)
 	end
 
 	if (lastAutoGreet < time()) then
+		if (string.find(trim(msg), ".*%?$"))then  --ending with ? | continue;
+			SendChatMessage(ask[math.random(#ask)],"GUILD")
+			lastAutoGreet=time()+2
+		end
 		for i = 1, #greetPatterns do
 			if (string.find(string.gsub(msg,"(.*)"," %1 "), "[^%a]"..greetPatterns[i].."[^%a]"))then
 				SendChatMessage(greets[math.random(#greets)],"GUILD")
@@ -230,7 +239,6 @@ function MDGZ:CHAT_MSG_GUILD(...)
 				return
 			end
 		end
-	
 	end
 end
 
