@@ -2,6 +2,7 @@
 ## Title: machtDRUCK GZ
 ## Version: 1337
 ## Author: Morf
+## SavedVariables: mdGzData
 
 mdgz.lua
 
