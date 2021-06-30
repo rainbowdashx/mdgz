@@ -252,7 +252,7 @@ function MDGZ:CHAT_MSG_GUILD(...)
             end
         end
     end
-    --print(buildWords(msg))
+   -- print(buildWords(msg))
 end
 
 function allwords(msg)
