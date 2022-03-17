@@ -157,6 +157,11 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
         index = string.find(name, "-")
         if (index ~= nil) then name = string.sub(name, 0, index - 1) end
 
+        local checkName = string.lower(name)
+        if checkName == "Spacedout" then
+            name = "Spaceworld"
+        end
+
         if (name ~= UnitName("player")) then
             msg = string.gsub(msg, "{name}", name)
             SendChatMessage(msg, "GUILD")
