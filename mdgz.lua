@@ -158,7 +158,7 @@ function MDGZ:CHAT_MSG_GUILD_ACHIEVEMENT(...)
         if (index ~= nil) then name = string.sub(name, 0, index - 1) end
 
         local checkName = string.lower(name)
-        if checkName == "Spacedout" then
+        if checkName == "spacedout" then
             name = "Spaceworld"
         end
 
