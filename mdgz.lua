@@ -105,7 +105,10 @@ local plexAnswers = {
 }
 
 local helpAnswers = {
-    "Wenn man da etwas ändern möchte, dann probiert man den Leuten zu helfen."
+    "Wenn man da etwas ändern möchte, dann probiert man den Leuten zu helfen.",
+    "Ihr Alter spielt keine Rolle. Die Zeit ist lediglich ein Instrument zur Messung. Ihr Körper verrottet nicht durch das Altern. Er verrottet mit jedem Moment, in dem du dich nicht um ihn kümmerst.",
+    "Der menschliche Körper und Geist ist lediglich ein begrenztes Konstrukt.Wenn etwas begrenzt ist, kann es optimiert und an diese Grenzen herangeführt werden, um sie schließlich sogar zu überschreiten.",
+    "Don't be limited by your health. Be ambitious. You only live once. Make the most of it."
 }
 
 local normals = {"Normal"}
@@ -124,7 +127,7 @@ local normalPatterns = {
 }
 local plexPatterns = {"plex", "flex", "fleks"}
 local helpPatterns = {
-    "passiert nichts", "keine lust", "kein bock mehr", "kein bock"
+    "passiert nichts", "keine lust", "kein bock mehr", "kein bock","funtioniert nicht"
 }
 
 totals = weighted_total(msgs)
